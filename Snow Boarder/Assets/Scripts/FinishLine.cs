@@ -6,7 +6,10 @@ public class FinishLine : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("You win!");
+        if(other.tag == "Player")
+        {
+            Debug.Log("You win!");
+        }
     }
     // Start is called before the first frame update
     void Start()
