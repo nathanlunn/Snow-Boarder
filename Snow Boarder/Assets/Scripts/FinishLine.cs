@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
@@ -8,18 +9,7 @@ public class FinishLine : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("You win!");
+            SceneManager.LoadScene(0);
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
