@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float torqueAmount = 1f;
     [SerializeField] float boostSpeed = 30f;
     [SerializeField] float regularSpeed = 20f;
+    bool disabled = false;
 
     Rigidbody2D rb2d;
     SurfaceEffector2D surfaceEffector2D;
@@ -23,8 +24,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotatePlayer();
-        RespondToBoost();
+        if(!disabled) 
+        {
+            RotatePlayer();
+            RespondToBoost();
+        }
+    }
+
+    public void DisableControls() 
+    {
+        disabled = true;
     }
 
     void RespondToBoost()
